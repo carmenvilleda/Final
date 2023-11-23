@@ -9,10 +9,6 @@ import pandas as pd
 import dash_bootstrap_components as dbc
 import yfinance as yf
 import datetime
-# from pypfopt import risk_models
-# from pypfopt import expected_returns
-# from pypfopt import plotting
-# from pypfopt.efficient_frontier import EfficientFrontier
 
 # Dataframe
 ##Precio
@@ -29,18 +25,12 @@ nombre = ['RetornoGE', 'RetornoJNJ', 'RetornoKO', 'RetornoNSRGY', 'RetornoPEP', 
 returns.columns = nombre
 
 ##Retorno max Sharpe y min varianza
-mu = expected_returns.mean_historical_return(data)
-sigma = risk_models.sample_cov(data)
-ef = EfficientFrontier(mu,sigma)
-psharpe = ef.max_sharpe()
-ef = EfficientFrontier(mu,sigma)
-pvol = ef.min_volatility()
 r_sharpe = data.pct_change()
-peso_sharpe = np.array(list(psharpe.values()))
+peso_sharpe = np.array([0.57520575, 0,0,0,0.42479425,0])
 r_sharpe["Retorno_max_sharpe"] = r_sharpe.dot(peso_sharpe)
 ret_sharpe = (1+r_sharpe).cumprod()
 r_vol = data.pct_change()
-peso_var = np.array(list(pvol.values()))
+peso_var = np.array([0.05944776, 0.34708764,0.12169357,0.29313943,0.10253169,0.07609991])
 r_vol["Retorno_min_var"] = r_vol.dot(peso_var)
 ret_vol = (1+r_vol).cumprod()
 
@@ -153,4 +143,5 @@ def update_graph(selected_indices, selected_precios, selected_retornos):
     return fig_precio, fig_retorno,fig_hist_max_sharpe, fig_hist_min_var
 
 if __name__ == '__main__':
-    app.run_server(debug=False, host="192.168.0.26", port=10007)
+    app.run_server(debug=False, host="192.168.0.26", port=10013)
+
