@@ -9,10 +9,10 @@ import pandas as pd
 import dash_bootstrap_components as dbc
 import yfinance as yf
 import datetime
-from pypfopt import risk_models
-from pypfopt import expected_returns
-from pypfopt import plotting
-from pypfopt.efficient_frontier import EfficientFrontier
+# from pypfopt import risk_models
+# from pypfopt import expected_returns
+# from pypfopt import plotting
+# from pypfopt.efficient_frontier import EfficientFrontier
 
 # Dataframe
 ##Precio
