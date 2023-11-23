@@ -6,5 +6,7 @@ gunicorn
 openpyxl
 yfinance
 datetime
-pypfopt
-pypfopt.efficient_frontier
+risk_models
+expected_returns
+plotting
+EfficientFrontier
