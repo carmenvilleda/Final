@@ -6,4 +6,4 @@ gunicorn
 openpyxl
 yfinance
 datetime
-
+numpy
