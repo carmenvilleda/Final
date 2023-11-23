@@ -9,6 +9,7 @@ import pandas as pd
 import dash_bootstrap_components as dbc
 import yfinance as yf
 import datetime
+import numpy as np
 
 # Dataframe
 ##Precio
